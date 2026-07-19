@@ -742,9 +742,9 @@ right .3s ease;
 .music-control{
 
 
-width:60px;
+width:65px;
 
-height:60px;
+height:65px;
 
 
 border-radius:50%;
@@ -754,29 +754,81 @@ border:none;
 
 
 background:
-linear-gradient(
-135deg,
-#9d4edd,
-#3a86ff
+radial-gradient(
+circle,
+#222 20%,
+#9d4edd 22%,
+#6b2f9e 60%,
+#111 100%
 );
+
 
 
 color:white;
 
 
-font-size:26px;
+font-size:28px;
 
 
 cursor:pointer;
 
 
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+
 box-shadow:
-0 0 25px rgba(157,78,221,.7);
+
+0 0 30px
+rgba(157,78,221,.8);
+
+
+
+}
+
+
+.vinyl{
+
+
+display:block;
+
+
+}
+
+
+
+.music-control.playing
+.vinyl{
 
 
 animation:
-rotateMusic 4s linear infinite;
+vinylRotate 4s linear infinite;
 
+
+}
+
+
+
+@keyframes vinylRotate{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
 
 }
 
@@ -840,6 +892,59 @@ transform:rotate(360deg);
 
 }
     
+
+
+}
+
+.music-control.playing::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:80px;
+
+height:80px;
+
+
+border-radius:50%;
+
+
+border:2px solid
+rgba(157,78,221,.5);
+
+
+
+animation:
+
+wave 1.5s infinite;
+
+
+}
+
+
+@keyframes wave{
+
+
+0%{
+
+transform:scale(.8);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:scale(1.5);
+
+opacity:0;
+
+}
 
 
 }
