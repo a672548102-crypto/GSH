@@ -249,26 +249,179 @@ document.getElementById("musicWidget");
 bgMusic.volume = 0.35;
 
 
-
-// 页面打开尝试播放
-
-window.addEventListener(
-"load",
-()=>{
+// =========================
+// 音乐球拖动吸附
+// =========================
 
 
-bgMusic.play()
-.catch(()=>{
-
-console.log(
-"浏览器阻止自动播放"
+const widget =
+document.getElementById(
+"musicWidget"
 );
 
 
-});
+
+let dragging=false;
+
+
+let startX;
+
+let startY;
+
+
+let offsetX;
+
+let offsetY;
+
+
+
+widget.addEventListener(
+"pointerdown",
+(e)=>{
+
+
+dragging=true;
+
+
+widget.setPointerCapture(
+e.pointerId
+);
+
+
+
+const rect =
+widget.getBoundingClientRect();
+
+
+
+startX=e.clientX;
+
+startY=e.clientY;
+
+
+
+offsetX=
+startX-rect.left;
+
+
+offsetY=
+startY-rect.top;
+
+
+
+widget.style.transition="none";
 
 
 });
+
+
+
+
+widget.addEventListener(
+"pointermove",
+(e)=>{
+
+
+if(!dragging)
+return;
+
+
+
+let x=
+e.clientX-offsetX;
+
+
+let y=
+e.clientY-offsetY;
+
+
+
+widget.style.left=
+x+"px";
+
+
+widget.style.top=
+y+"px";
+
+
+
+widget.style.right="auto";
+
+
+});
+
+
+
+
+widget.addEventListener(
+"pointerup",
+()=>{
+
+
+if(!dragging)
+return;
+
+
+
+dragging=false;
+
+
+snapMusic();
+
+
+});
+
+
+
+
+
+
+function snapMusic(){
+
+
+
+widget.style.transition=
+"all .35s ease";
+
+
+
+let middle=
+window.innerWidth/2;
+
+
+
+let center=
+widget.offsetLeft+
+widget.offsetWidth/2;
+
+
+
+if(center<middle){
+
+
+widget.style.left=
+"15px";
+
+
+widget.style.right=
+"auto";
+
+
+}else{
+
+
+widget.style.left=
+"auto";
+
+
+widget.style.right=
+"15px";
+
+
+}
+
+
+}
 
 
 
