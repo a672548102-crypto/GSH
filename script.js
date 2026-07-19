@@ -222,4 +222,151 @@ quantity:4
 }
 
 });
+
 console.log('Portfolio Website v1.0 - 用内容创造增长');
+// =======================
+// 音乐播放器
+// =======================
+
+
+const bgMusic =
+document.getElementById("bgMusic");
+
+
+const musicControl =
+document.getElementById("musicControl");
+
+
+const musicClose =
+document.getElementById("musicClose");
+
+
+const musicWidget =
+document.getElementById("musicWidget");
+
+
+
+bgMusic.volume = 0.35;
+
+
+
+// 页面打开尝试播放
+
+window.addEventListener(
+"load",
+()=>{
+
+
+bgMusic.play()
+.catch(()=>{
+
+console.log(
+"浏览器阻止自动播放"
+);
+
+
+});
+
+
+});
+
+
+
+
+// 点击音乐按钮
+
+
+musicControl.onclick=()=>{
+
+
+if(bgMusic.paused){
+
+
+bgMusic.play();
+
+
+musicControl.classList.remove(
+"pause"
+);
+
+
+
+}else{
+
+
+bgMusic.pause();
+
+
+musicControl.classList.add(
+"pause"
+);
+
+
+}
+
+
+};
+
+
+
+// 关闭按钮
+
+
+musicClose.onclick=()=>{
+
+
+bgMusic.pause();
+
+
+musicWidget.style.display="none";
+
+
+};
+// =======================
+// 视频播放控制音乐
+// =======================
+
+
+const videos =
+document.querySelectorAll("video");
+
+
+
+videos.forEach(video=>{
+
+
+video.addEventListener(
+"play",
+()=>{
+
+
+bgMusic.pause();
+
+
+musicControl.classList.add(
+"pause"
+);
+
+
+});
+
+
+
+
+video.addEventListener(
+"pause",
+()=>{
+
+
+bgMusic.play();
+
+
+musicControl.classList.remove(
+"pause"
+);
+
+
+});
+
+
+});
