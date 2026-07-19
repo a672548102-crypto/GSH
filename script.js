@@ -272,104 +272,40 @@ console.log(
 
 
 
-
-// 点击音乐按钮
-
-
-.music-control{
+musicControl.onclick=(e)=>{
 
 
-width:65px;
-
-height:65px;
+e.stopPropagation();
 
 
-border-radius:50%;
+
+if(bgMusic.paused){
 
 
-border:none;
+bgMusic.play();
 
 
-background:
-radial-gradient(
-circle,
-#222 20%,
-#9d4edd 22%,
-#6b2f9e 60%,
-#111 100%
+musicControl.classList.add(
+"playing"
 );
 
 
 
-color:white;
+}else{
 
 
-font-size:28px;
+bgMusic.pause();
 
 
-cursor:pointer;
-
-
-
-display:flex;
-
-align-items:center;
-
-justify-content:center;
-
-
-
-box-shadow:
-
-0 0 30px
-rgba(157,78,221,.8);
-
+musicControl.classList.remove(
+"playing"
+);
 
 
 }
 
 
-.vinyl{
-
-
-display:block;
-
-
-}
-
-
-
-.music-control.playing
-.vinyl{
-
-
-animation:
-vinylRotate 4s linear infinite;
-
-
-}
-
-
-
-@keyframes vinylRotate{
-
-
-from{
-
-transform:rotate(0deg);
-
-}
-
-
-to{
-
-transform:rotate(360deg);
-
-}
-
-}
-
-
+};
 
 // 关闭按钮
 
@@ -442,7 +378,7 @@ document.getElementById("musicWidget");
 
 
 let isDragging = false;
-
+let moved=false;
 
 let startX = 0;
 
@@ -691,58 +627,6 @@ widget.style.right="20px";
 
 }
 
-
-
-}
-.music-control.playing::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:80px;
-
-height:80px;
-
-
-border-radius:50%;
-
-
-border:2px solid
-rgba(157,78,221,.5);
-
-
-
-animation:
-
-wave 1.5s infinite;
-
-
-}
-
-
-@keyframes wave{
-
-
-0%{
-
-transform:scale(.8);
-
-opacity:1;
-
-}
-
-
-100%{
-
-transform:scale(1.5);
-
-opacity:0;
-
-}
 
 
 }
