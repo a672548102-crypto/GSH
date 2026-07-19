@@ -370,3 +370,265 @@ musicControl.classList.remove(
 
 
 });
+// ==========================
+// 音乐悬浮球拖动吸边
+// ==========================
+
+
+const widget =
+document.getElementById("musicWidget");
+
+
+let isDragging = false;
+
+
+let startX = 0;
+
+let startY = 0;
+
+
+let startLeft = 0;
+
+let startTop = 0;
+
+
+
+// 鼠标按下
+
+widget.addEventListener(
+"mousedown",
+(e)=>{
+
+
+isDragging=true;
+
+
+widget.style.transition="none";
+
+
+
+startX=e.clientX;
+
+startY=e.clientY;
+
+
+startLeft=widget.offsetLeft;
+
+startTop=widget.offsetTop;
+
+
+});
+
+
+
+
+// 手机触摸
+
+widget.addEventListener(
+"touchstart",
+(e)=>{
+
+
+isDragging=true;
+
+
+widget.style.transition="none";
+
+
+const touch=e.touches[0];
+
+
+startX=touch.clientX;
+
+startY=touch.clientY;
+
+
+startLeft=widget.offsetLeft;
+
+startTop=widget.offsetTop;
+
+
+});
+
+
+
+
+
+// 移动
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
+
+
+if(!isDragging)
+return;
+
+
+
+moveWidget(
+e.clientX,
+e.clientY
+);
+
+
+});
+
+
+
+
+
+document.addEventListener(
+"touchmove",
+(e)=>{
+
+
+if(!isDragging)
+return;
+
+
+
+const touch=e.touches[0];
+
+
+moveWidget(
+touch.clientX,
+touch.clientY
+);
+
+
+});
+
+
+
+
+
+
+function moveWidget(x,y){
+
+
+let moveX =
+x-startX;
+
+
+let moveY =
+y-startY;
+
+
+
+widget.style.left =
+startLeft+moveX+"px";
+
+
+widget.style.top =
+startTop+moveY+"px";
+
+
+
+widget.style.right="auto";
+
+
+}
+
+
+
+
+
+
+
+// 松手吸附
+
+
+document.addEventListener(
+"mouseup",
+()=>{
+
+
+if(!isDragging)
+return;
+
+
+isDragging=false;
+
+
+snapToEdge();
+
+
+});
+
+
+
+document.addEventListener(
+"touchend",
+()=>{
+
+
+if(!isDragging)
+return;
+
+
+isDragging=false;
+
+
+snapToEdge();
+
+
+});
+
+
+
+
+
+
+
+function snapToEdge(){
+
+
+widget.style.transition=
+"all .3s ease";
+
+
+
+let center =
+window.innerWidth/2;
+
+
+
+let widgetCenter =
+widget.offsetLeft+
+widget.offsetWidth/2;
+
+
+
+
+// 靠左
+
+if(widgetCenter<center){
+
+
+widget.style.left="20px";
+
+
+widget.style.right="auto";
+
+
+}
+
+
+// 靠右
+
+else{
+
+
+widget.style.left="auto";
+
+
+widget.style.right="20px";
+
+
+}
+
+
+
+}
