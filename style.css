@@ -124,11 +124,15 @@ body {
 }
 
 .avatar-ring {
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
+    position:absolute;
+
+    inset:-8px;
+
+    border:2px solid var(--secondary-color);
+
+    border-radius:50%;
+
+    animation:rotate 8s linear infinite;
     border: 2px solid var(--secondary-color);
     border-radius: 50%;
     animation: rotate 8s linear infinite;
@@ -599,6 +603,19 @@ section {
 
 /* 响应式设计 */
 @media (max-width: 768px) {
+    .avatar-card{
+
+    width:150px;
+    height:150px;
+
+}
+
+
+.avatar-ring{
+
+    inset:-8px;
+
+}
     .main-title {
         font-size: 2.2rem;
     }
@@ -608,9 +625,12 @@ section {
         font-size: 0.85rem;
     }
 
-    .avatar {
-        width: 150px;
-        height: 150px;
+    .avatar-card{
+
+    width:150px;
+    height:150px;
+
+}
     }
 
     .tags {
@@ -813,6 +833,7 @@ to{
 transform:rotate(360deg);
 
 }
+    
 
 
 }
