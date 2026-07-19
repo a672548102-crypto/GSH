@@ -276,36 +276,98 @@ console.log(
 // 点击音乐按钮
 
 
-musicControl.onclick=()=>{
+.music-control{
 
 
-if(bgMusic.paused){
+width:65px;
+
+height:65px;
 
 
-bgMusic.play();
+border-radius:50%;
 
 
-musicControl.classList.remove(
-"pause"
+border:none;
+
+
+background:
+radial-gradient(
+circle,
+#222 20%,
+#9d4edd 22%,
+#6b2f9e 60%,
+#111 100%
 );
 
 
 
-}else{
+color:white;
 
 
-bgMusic.pause();
+font-size:28px;
 
 
-musicControl.classList.add(
-"pause"
-);
+cursor:pointer;
+
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+
+box-shadow:
+
+0 0 30px
+rgba(157,78,221,.8);
+
 
 
 }
 
 
-};
+.vinyl{
+
+
+display:block;
+
+
+}
+
+
+
+.music-control.playing
+.vinyl{
+
+
+animation:
+vinylRotate 4s linear infinite;
+
+
+}
+
+
+
+@keyframes vinylRotate{
+
+
+from{
+
+transform:rotate(0deg);
+
+}
+
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
 
 
 
@@ -629,6 +691,58 @@ widget.style.right="20px";
 
 }
 
+
+
+}
+.music-control.playing::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:80px;
+
+height:80px;
+
+
+border-radius:50%;
+
+
+border:2px solid
+rgba(157,78,221,.5);
+
+
+
+animation:
+
+wave 1.5s infinite;
+
+
+}
+
+
+@keyframes wave{
+
+
+0%{
+
+transform:scale(.8);
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:scale(1.5);
+
+opacity:0;
+
+}
 
 
 }
