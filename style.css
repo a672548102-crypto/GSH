@@ -713,27 +713,11 @@ section {
 
 .music-widget{
 
-position:fixed;
-
-top:80px;
-
-right:30px;
-
-z-index:99999;
-
-display:flex;
-
-align-items:flex-start;
-
 cursor:grab;
 
 touch-action:none;
 
 user-select:none;
-
-transition:
-left .3s ease,
-right .3s ease;
 
 }
 
