@@ -275,27 +275,25 @@ console.log(
 musicControl.onclick=(e)=>{
 
 
-e.stopPropagation();
+if(moved){
 
+return;
+
+}
 
 
 if(bgMusic.paused){
 
-
 bgMusic.play();
-
 
 musicControl.classList.add(
 "playing"
 );
 
 
-
 }else{
 
-
 bgMusic.pause();
-
 
 musicControl.classList.remove(
 "playing"
@@ -304,9 +302,7 @@ musicControl.classList.remove(
 
 }
 
-
 };
-
 // 关闭按钮
 
 
@@ -462,7 +458,7 @@ document.addEventListener(
 
 if(!isDragging)
 return;
-
+moved=true;
 
 
 moveWidget(
