@@ -776,6 +776,45 @@ widget.style.right="20px";
 
 }
 
+let musicStarted = false;
 
+
+function startMusic(){
+
+    if(musicStarted) return;
+
+
+    bgMusic.play()
+    .then(()=>{
+
+        musicStarted=true;
+
+        musicControl.classList.add("playing");
+
+    })
+    .catch(err=>{
+
+        console.log(err);
+
+    });
+
+}
+
+
+
+document.addEventListener(
+"click",
+startMusic,
+{
+    once:true
+});
+
+
+document.addEventListener(
+"touchstart",
+startMusic,
+{
+    once:true
+});
 
 }
