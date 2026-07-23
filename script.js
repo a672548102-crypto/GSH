@@ -224,3 +224,31 @@ quantity:4
 });
 
 console.log('Portfolio Website v1.0 - 用内容创造增长');
+
+// =========================
+// 手机菜单
+// =========================
+
+const menuBtn=document.querySelector(".menu-toggle");
+
+const nav=document.querySelector(".nav-menu");
+
+if(menuBtn){
+
+menuBtn.onclick=()=>{
+
+nav.classList.toggle("active");
+
+};
+
+}
+
+document.querySelectorAll(".nav-menu a").forEach(item=>{
+
+item.onclick=()=>{
+
+nav.classList.remove("active");
+
+};
+
+});
