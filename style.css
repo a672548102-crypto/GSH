@@ -121,6 +121,14 @@ body {
     object-position: center 10%;
     border: 4px solid var(--accent-color);
     box-shadow: 0 0 30px rgba(157, 78, 221, 0.3);
+    transition:.5s;
+    cursor:pointer;
+.avatar:hover{
+    transform:scale(1.04);
+    box-shadow:
+    0 0 60px rgba(157,78,221,.7);
+
+}
 }
 
 .avatar-ring {
@@ -243,16 +251,32 @@ body {
     font-weight: 600;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
-    color: white;
-}
+.btn-primary{
 
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.3);
-}
+background:linear-gradient(
+135deg,
+#6b2f9e,
+#3a86ff
+);
 
+color:white;
+
+border:none;
+
+box-shadow:0 10px 35px rgba(107,47,158,.35);
+
+transition:.35s;
+
+}
+.btn-primary:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 15px 45px rgba(58,134,255,.45);
+
+}
 .btn-secondary {
     background: transparent;
     color: var(--accent-color);
@@ -706,6 +730,105 @@ section {
     pointer-events:none;
 
 }
+/* ===========================
+   V3.0 全站科技背景
+=========================== */
 
+#particles-js{
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+}
+
+.bg-glow{
+    position:fixed;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    filter:blur(120px);
+    opacity:.18;
+    pointer-events:none;
+    z-index:-3;
+}
+
+.glow1{
+    top:-250px;
+    left:-250px;
+    background:#6b2f9e;
+    animation:floatGlow1 18s ease-in-out infinite;
+}
+
+.glow2{
+    right:-250px;
+    bottom:-250px;
+    background:#3a86ff;
+    animation:floatGlow2 22s ease-in-out infinite;
+}
+
+.bg-grid{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    background-image:
+
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+
+    background-size:50px 50px;
+
+    mask-image:radial-gradient(circle, black 45%, transparent 100%);
+}
+
+@keyframes floatGlow1{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(120px,80px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
+
+@keyframes floatGlow2{
+
+0%{
+
+transform:translate(0,0);
+
+}
+
+50%{
+
+transform:translate(-120px,-80px);
+
+}
+
+100%{
+
+transform:translate(0,0);
+
+}
+
+}
 
 
