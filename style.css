@@ -1270,3 +1270,29 @@ bottom:-150px;
 }
 
 }
+
+.color-bg{
+
+position:fixed;
+
+inset:0;
+
+background:
+
+radial-gradient(
+circle at 20% 20%,
+rgba(157,78,221,.25),
+transparent 35%
+),
+
+radial-gradient(
+circle at 80% 80%,
+rgba(58,134,255,.25),
+transparent 35%
+);
+
+z-index:-1;
+
+pointer-events:none;
+
+}
