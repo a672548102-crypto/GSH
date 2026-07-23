@@ -831,4 +831,86 @@ transform:translate(0,0);
 
 }
 
+/* ===========================
+作品集页面
+=========================== */
 
+.collection-page{
+
+padding-top:140px;
+
+padding-bottom:80px;
+
+}
+
+.collection-search{
+
+margin:40px auto;
+
+max-width:500px;
+
+}
+
+.collection-search input{
+
+width:100%;
+
+padding:16px 22px;
+
+border-radius:50px;
+
+border:1px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.05);
+
+color:#fff;
+
+font-size:16px;
+
+outline:none;
+
+backdrop-filter:blur(10px);
+
+}
+
+.collection-filter{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+margin-bottom:50px;
+
+}
+
+.filter-btn{
+
+padding:10px 24px;
+
+border-radius:30px;
+
+border:1px solid rgba(255,255,255,.15);
+
+background:rgba(255,255,255,.05);
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.filter-btn:hover,
+
+.filter-btn.active{
+
+background:linear-gradient(135deg,#6b2f9e,#3a86ff);
+
+border:none;
+
+}
