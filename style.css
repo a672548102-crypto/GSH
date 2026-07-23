@@ -85,18 +85,7 @@ font-size:18px;
 }
 
 }
-.nav-menu {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-}
 
-.nav-menu a {
-    color: var(--light-text);
-    text-decoration: none;
-    transition: color 0.3s;
-    font-size: 0.95rem;
-}
 
 .nav-menu a:hover {
     color: var(--accent-color);
@@ -686,17 +675,7 @@ section {
         font-size: 2.2rem;
     }
 
-    .nav-menu{
-
-        display:flex;
-
-        flex-wrap:nowrap;
-
-        gap:8px;
-
-        white-space:nowrap;
-
-    }
+    
 
     .avatar-card{
 
@@ -1390,4 +1369,49 @@ linear-gradient(
 }
 
 
+}
+/* ==========================
+V3.1 手机导航
+========================== */
+
+.menu-toggle{
+    display:none;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
+    user-select:none;
+}
+
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+        z-index:10001;
+    }
+
+    .nav-menu{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:260px;
+        height:100vh;
+        background:rgba(13,2,33,.95);
+        backdrop-filter:blur(20px);
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        gap:30px;
+        list-style:none;
+        transition:right .4s ease;
+        z-index:10000;
+    }
+
+    .nav-menu.active{
+        right:0;
+    }
+
+    .nav-menu a{
+        font-size:18px;
+    }
 }
