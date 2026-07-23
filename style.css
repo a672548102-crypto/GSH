@@ -71,7 +71,7 @@ z-index:5;
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    background:#050014;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1294,5 +1294,58 @@ transparent 35%
 z-index:-1;
 
 pointer-events:none;
+
+}
+
+/* ==========================
+手机端科技紫基础背景
+========================== */
+
+
+.tech-background{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+
+background:
+
+linear-gradient(
+135deg,
+#050014 0%,
+#12002b 45%,
+#001a4d 100%
+);
+
+
+z-index:-3;
+
+pointer-events:none;
+
+}
+@media(max-width:768px){
+
+
+.tech-background{
+
+background:
+
+linear-gradient(
+160deg,
+#080018 0%,
+#24004a 45%,
+#001b52 100%
+);
+
+
+}
+
 
 }
