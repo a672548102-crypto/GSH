@@ -37,9 +37,17 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+
+max-width:1200px;
+
+margin:0 auto;
+
+padding:0 20px;
+
+position:relative;
+
+z-index:5;
+
 }
 
 /* 导航栏 */
@@ -1209,3 +1217,32 @@ transform:translateY(-3px);
 
 }
 
+@media(max-width:768px){
+
+.bg-glow{
+
+opacity:.35;
+
+filter:blur(90px);
+
+}
+
+
+.glow1{
+
+top:-150px;
+
+left:-150px;
+
+}
+
+
+.glow2{
+
+right:-150px;
+
+bottom:-150px;
+
+}
+
+}
