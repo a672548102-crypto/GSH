@@ -770,13 +770,8 @@ section {
 
 .bg-glow{
     position:fixed;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-    filter:blur(120px);
-    opacity:.18;
+    z-index:1;
     pointer-events:none;
-    z-index:-3;
 }
 
 .glow1{
