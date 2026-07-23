@@ -777,23 +777,47 @@ section {
     }
 
 .bg-glow{
+
     position:fixed;
-    z-index:1;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:.35;
+
     pointer-events:none;
+
+    z-index:0;
+
 }
 
 .glow1{
-    top:-250px;
-    left:-250px;
-    background:#6b2f9e;
+
+    top:-120px;
+
+    left:-120px;
+
+    background:#9d4edd;
+
     animation:floatGlow1 18s ease-in-out infinite;
+
 }
 
 .glow2{
-    right:-250px;
-    bottom:-250px;
+
+    right:-120px;
+
+    bottom:-120px;
+
     background:#3a86ff;
+
     animation:floatGlow2 22s ease-in-out infinite;
+
 }
 
 .bg-grid{
